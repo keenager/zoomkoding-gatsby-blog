@@ -21,9 +21,11 @@ function PostHeader({ post, viewCount }) {
         <div className="author">
           posted by <strong>{post.author}</strong>,
         </div>{' '}
-        {post.date}
+        {post.date} {' '}
+        (마지막 수정: {post.date})
         {viewCount && ` · ${viewCount} views`}
       </div>
+      
     </header>
   );
 }

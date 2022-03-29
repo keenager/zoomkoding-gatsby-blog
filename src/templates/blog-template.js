@@ -52,7 +52,7 @@ export const pageQuery = graphql`
       html
       excerpt(pruneLength: 500, truncate: true)
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "LL", locale: "ko")
         title
         categories
         author
@@ -60,6 +60,11 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+      }
+      parent {
+        ... on File {
+          modifiedTime(formatString: "LLL", locale: "ko")
+        }
       }
     }
 
@@ -67,7 +72,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "LL", locale: "ko")
         title
         categories
         author
@@ -75,6 +80,11 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+      }
+      parent {
+        ... on File {
+          modifiedTime(formatString: "LLL", locale: "ko")
+        }
       }
     }
 
@@ -82,7 +92,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "LL", locale: "ko")
         title
         categories
         author
@@ -90,6 +100,11 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+      }
+      parent {
+        ... on File {
+          modifiedTime(formatString: "LLL", locale: "ko")
+        }
       }
     }
 

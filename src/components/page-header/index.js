@@ -19,6 +19,11 @@ function PageHeader({ siteTitle }) {
                 fields {
                   slug
                 }
+                parent {
+                  ... on File {
+                    modifiedTime(formatString: "LLL", locale: "ko")
+                  }
+                }
               }
             }
           }

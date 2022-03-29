@@ -71,7 +71,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               categories
               title
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "LL", locale: "ko")
+            }
+            parent {
+              ... on File {
+                modifiedTime(formatString: "LLL", locale: "ko")
+              }
             }
           }
           next {

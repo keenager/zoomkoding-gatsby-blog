@@ -43,10 +43,15 @@ export const pageQuery = graphql`
           frontmatter {
             categories
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "LL", locale: "ko")
           }
           fields {
             slug
+          }
+          parent {
+            ... on File {
+              modifiedTime(formatString: "LLL", locale: "ko")
+            }
           }
         }
       }
